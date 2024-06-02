@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: professional-flask-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: professional-flask-app
+  template:
+    metadata:
+      labels:
+        app: professional-flask-app
+    spec:
+      containers:
+      - name: professional-flask-app
+        image: professional-flask-app:latest
+        ports:
+        - containerPort: 5000
